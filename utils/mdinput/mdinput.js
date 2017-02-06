@@ -10,7 +10,9 @@ class MDInput{
         let allpages = getCurrentPages()
         let currentPage = allpages[allpages.length - 1]
         let page = currentPage 
-        page.setData(data)
+        page.setData({
+            mdInput:data
+        })
     }
 
     handlerInput(e){
@@ -24,32 +26,40 @@ class MDInput{
     if(e.detail.value.length>20){
         
         page.setData({
+            mdInput:{
                  style_mdi_num_input:'color:red;',
                 mdi_num_input:e.detail.value.length
+            }
            
         })
         if(!page.data.showHelperText){
             page.setData({
+                 mdInput:{
                       showHelperText:true,
                     mdi_helper_text:'最多只能输入20个字符哦!'
+                 }
            
         })
         }
     }else{
         if(e.detail.value.length==0){
           page.setData({
+               mdInput:{
                     style_mdi_float:'transform: translateY(0px)',
 
+               }
               
           })
       }else{
         page.setData({
+             mdInput:{
                  style_mdi_border:'border-bottom:1px solid deepskyblue',
                     style_mdi_float:'color:deepskyblue ;transform: translateY(-20px)',
                     style_mdi_num_input:'color:deepskyblue;',
                     showHelperText:false,
                     mdi_num_input:e.detail.value.length
                 
+             }
          
         })
       }
