@@ -99,6 +99,7 @@ class SnackBar{
 
         return this;
     }
+    
 
 }
 
