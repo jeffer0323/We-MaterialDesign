@@ -1,0 +1,65 @@
+
+page{
+    display: flex;
+    justify-content: center;
+    padding-top: 80rpx;
+}
+
+.mdi-main{
+    width: 80%;
+    height: 130rpx;
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+.mdi-header{
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+    border-bottom: 2rpx solid grey;
+    
+}
+
+.mdi-float-label{
+    font-size: 28rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 44rpx;
+    color: darkgray;
+    -webkit-transition:ease all;
+    -moz-transition:ease all;
+    transition:ease all;
+    -webkit-transition-duration:500ms;
+    -moz-transition-duration:500ms;
+    transition-duration:500ms;
+}
+
+.mdi-input{
+    position: absolute;
+    width: 100%;
+    line-height: 50rpx;
+    height: 50rpx;
+    font-size: 30rpx;
+    bottom: 0;
+    
+}
+
+.mdi-footer{
+    font-size: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+}
+
+.mdi-helper{
+    color: red;
+}
+
+.mdi-number{
+    position: absolute;
+    right: 0;
+}

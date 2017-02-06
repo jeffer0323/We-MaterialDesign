@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
-
+let SnackBar = require("../../utils/snackbar/snackbar.js")
 Page({
   data: {
     v_username_border:'', //用户输入框底部border样式
@@ -25,9 +25,7 @@ Page({
   // 用户名输入框获取焦点时事件回调
   usernameFocus:function(e){
     var that = this;
-   
     console.log(e.detail)
-
   },
   // 用户名输入框输入时事件回调
   usernameInput:function(e){
@@ -47,6 +45,14 @@ Page({
         this.setData({
           sp_num_current_un:'color:orangered;'
         })
+        SnackBar.getInstance().make({
+            snack_title:"username is allowed only 20 words",
+            snack_action: 'I see!',
+            onActionClick: "onActionClick",
+            duration:2000,
+            style_snack_action:'display:block;',
+            style_snackbar:'background-color:darkgrey;'
+        })
       }
       
     }else{
@@ -60,8 +66,20 @@ Page({
     console.log("onBlur")
      this.setData({
       v_username_border:'border-bottom:1px solid grey'
-     
     })
+  },
+
+  onActionClick:function(e){
+    SnackBar.getInstance().hide()
+    setTimeout(()=>{
+      this.test("test")
+    },2000)
+    
+  },
+
+
+  test:function(data){
+    console.log(data)
   },
 
   pwdFocus:function(e){

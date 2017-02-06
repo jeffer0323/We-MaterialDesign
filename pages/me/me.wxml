@@ -1,0 +1,10 @@
+ <import src="../../utils/mdinput/mdinput.wxml"/>
+ <view style="height:200px;width:100%;">
+ <template is="mdInput" data="{{...mdInput}}"/>
+ </view>
+ 
+
+
+
+
+    

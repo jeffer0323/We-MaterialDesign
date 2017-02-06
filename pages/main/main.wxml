@@ -1,4 +1,5 @@
 <!--main.wxml-->
+
 <view class="container">
         <view style="width:100%; height:30rpx; background-color:white; border-bottom: 1px solid silver;"></view>
 
@@ -6,6 +7,8 @@
             <text class="item-tx">{{item}}</text>
             <image class="item-img" src="../../images/arrow.png"></image>
         </view>
+
+       
 
          <view class="v-logo-text">
              —  Material Design  —

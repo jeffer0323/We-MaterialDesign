@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<import src="../../utils/snackbar/snackbar.wxml"/>
   <view class="container">
   
   <view class="v-main">
@@ -7,8 +7,8 @@
         <view class="v-float-username" style="{{v_float_username}}" >username</view>
        <input class= "it-username"  placeholder-class="it-username-ph" bindfocus="usernameFocus" bindinput="usernameInput" bindblur="usernameBlur"/>
     </view>
-    <view class="v-username-max">
-      <span style="{{sp_num_current_un}}">{{num_current_un}}</span>
+    <view class="v-username-max" >
+      <span style="{{sp_num_current_un}}" >{{num_current_un}}</span>
       <span style="color:grey;">/20</span>
     </view>
     
@@ -26,4 +26,6 @@
     —  Material Design  —
   </view>
 </view>
+
+<template is="snackbar" data="{{...snackbar}}"/>
 

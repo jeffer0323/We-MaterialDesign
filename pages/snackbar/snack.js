@@ -24,7 +24,7 @@ Page({
 
   onClick1:function(e){
     var that = this
-        SnackBar.getInstance().show({
+        SnackBar.getInstance().make({
             snack_title:"I'm a tip",
             onActionClick: "onActionClick",
             duration:2000,
@@ -35,7 +35,7 @@ Page({
   },
 
   onClick2:function(e){
-       SnackBar.getInstance().show({
+       SnackBar.getInstance().make({
             snack_title:"I have message and action",
             snack_action: 'tap me',
             onActionClick: "onActionClick",
@@ -46,7 +46,7 @@ Page({
   },
 
   onClick3:function(e){
-      SnackBar.getInstance().show({
+      SnackBar.getInstance().make({
             snack_title:"I have message and action",
             snack_action: 'tap me',
             onActionClick: "onActionClick",
@@ -57,7 +57,7 @@ Page({
   },
 
   onClick4:function(e){
-      SnackBar.getInstance().show({
+      SnackBar.getInstance().make({
             snack_title:"I have message and action",
             snack_action: 'cancel',
             onActionClick: "onActionClick2",
@@ -68,7 +68,7 @@ Page({
   },
 
    onClick5:function(e){
-      SnackBar.getInstance().show({
+      SnackBar.getInstance().make({
             snack_title:"A long show",
             duration:4000,
             style_snack_action:'display:none;',

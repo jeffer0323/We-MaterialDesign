@@ -1,33 +1,44 @@
+let app = getApp()
+let MDInput = require("../../utils/mdinput/mdinput.js")
 Page({
   data:{
+     
   },
+
+
+
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+   new MDInput().putData({
+      mdi_float_label:'用户名', 
+      mdi_helper_text:'',
+      mdi_num_input:0,
+      mdi_num_range:20,
+      style_mdi_main:'',
+      style_mdi_border:'',
+      style_mdi_float:'',
+      style_mdi_helper:'',
+      style_mdi_num_input:'color:deepskyblue;',
+      style_mdi_num_range:'color:deepskyblue;',
+      showHelperText:false
+   })
   },
-  onReady:function(){
-    // 生命周期函数--监听页面初次渲染完成
+    // 用户名输入框输入时事件回调
+  onMDInput(e){
+     console.log(e.detail)
+     new MDInput().handlerInput(e)
+     console.log(this.data)
   },
-  onShow:function(){
-    // 生命周期函数--监听页面显示
-  },
-  onHide:function(){
-    // 生命周期函数--监听页面隐藏
-  },
-  onUnload:function(){
-    // 生命周期函数--监听页面卸载
-  },
-  onPullDownRefresh: function() {
-    // 页面相关事件处理函数--监听用户下拉动作
-  },
-  onReachBottom: function() {
-    // 页面上拉触底事件的处理函数
-  },
-  onShareAppMessage: function() {
-    // 用户点击右上角分享
-    return {
-      title: 'title', // 分享标题
-      desc: 'desc', // 分享描述
-      path: 'path' // 分享路径
-    }
+  
+
+  onMDIBlur:function(e){
+    console.log(e.detail)
+     this.setData({
+      style_mdi_border:'border-bottom:1px solid grey'
+    })
   }
+  
+
+ 
+  
 })
