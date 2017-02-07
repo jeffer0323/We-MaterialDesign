@@ -3,69 +3,123 @@ class MDInput{
    
     constructor(){
         console.log('构造')
+        this._data = null
+        this._inputValue =''
     }
 
-    putData(data){
-           // 确保各个page不影响
+    static putData(data){
+        // 确保各个page不影响
+       
+        var _inputValues = new Array(data.length)
         let allpages = getCurrentPages()
         let currentPage = allpages[allpages.length - 1]
         let page = currentPage 
-        page.setData({
-            mdInput:data
-        })
-    }
-
-    handlerInput(e){
-         console.log(e.detail)
-           // 确保各个page不影响
-        let allpages = getCurrentPages()
-        let currentPage = allpages[allpages.length - 1]
-        let page = currentPage 
-    
-    
-    if(e.detail.value.length>20){
+        for(let i = 0; i<data.length ; i++){
+            let that = new MDInput()
         
-        page.setData({
-            mdInput:{
-                 style_mdi_num_input:'color:red;',
-                mdi_num_input:e.detail.value.length
+            that._data = data;
+            if(that._data[i].mdInput.hideFooter){
+                that._data[i].mdInput.style_mdi_num_input = "display:none;"
+                that._data[i].mdInput.style_mdi_helper = "display:none;"
+                that._data[i].mdInput.style_mdi_num_range ="display:none;"
+            }else{
+                that._data[i].mdInput.style_mdi_num_input =  that._data[i].mdInput.style_mdi_number_inputting
+                that._data[i].mdInput.style_mdi_helper = that._data[i].mdInput.style_mdi_helper_shown
+                that._data[i].mdInput.style_mdi_num_range =that._data[i].mdInput.style_mdi_number_range
+                that._data[i].mdInput.showHelperText = that._data[i].mdInput.isHelperShowBefore
             }
-           
-        })
-        if(!page.data.showHelperText){
+            
+            console.log(page)
+          
             page.setData({
-                 mdInput:{
-                      showHelperText:true,
-                    mdi_helper_text:'最多只能输入20个字符哦!'
-                 }
-           
-        })
-        }
-    }else{
-        if(e.detail.value.length==0){
-          page.setData({
-               mdInput:{
-                    style_mdi_float:'transform: translateY(0px)',
+                inputs:that._data
+            })
+            let onInput = data[i].mdInput.onMDInput
+            let onBlur = data[i].mdInput.onMDIBlur
+            page[onInput] = function(e){
+            
+                if(e.detail.value.length>Number(that._data[i].mdInput.mdi_num_range.substring(that._data[i].mdInput.mdi_num_range.length-2)))           {
 
-               }
-              
-          })
-      }else{
-        page.setData({
-             mdInput:{
-                 style_mdi_border:'border-bottom:1px solid deepskyblue',
-                    style_mdi_float:'color:deepskyblue ;transform: translateY(-20px)',
-                    style_mdi_num_input:'color:deepskyblue;',
-                    showHelperText:false,
-                    mdi_num_input:e.detail.value.length
+                     if(that._data[i].mdInput.hideFooter){
+                            that._data[i].mdInput.style_mdi_num_input = "display:none;"
+                            that._data[i].mdInput.style_mdi_helper = "display:none;"
+                            that._data[i].mdInput.style_mdi_num_range ="display:none;"
+                    }else{
+                            that._data[i].mdInput.style_mdi_num_input =  that._data[i].mdInput.style_mdi_number_overflow
+                            that._data[i].mdInput.mdi_num_input = e.detail.value.length
+                            that._data[i].mdInput.mdi_helper_text = that._data[i].mdInput.mdi_helper_text_error
+                            if(!that._data[i].mdInput.isHelperShowBefore){
+                                that._data[i].mdInput.showHelperText = true
+                            }else{
+                                that._data[i].mdInput.style_mdi_helper = that._data[i].mdInput.style_mdi_helper_error
+                                
+                            }
+                    }
+                    that._data[i].mdInput.style_mdi_border = that._data[i].mdInput.style_mdi_border_focus
+                    
+                   
+                    
+                    page.setData({
+                        inputs:that._data
+                    })
+                }else{
+                    if(e.detail.value.length==0){
+                        that._data[i].mdInput.style_mdi_float = 'transform: translateY(0px);'
+                        that._data[i].mdInput.mdi_num_input = e.detail.value.length
+                        page.setData({
+                            inputs:that._data
+                        })
+                    }else{
+                        that._data[i].mdInput.style_mdi_border = that._data[i].mdInput.style_mdi_border_focus
+                        that._data[i].mdInput.style_mdi_float = 'transform: translateY(-20px);'+that._data[i].mdInput.style_mdi_float_up
+
+                         if(that._data[i].mdInput.hideFooter){
+                            that._data[i].mdInput.style_mdi_num_input = "display:none;"
+                            that._data[i].mdInput.style_mdi_helper = "display:none;"
+                            that._data[i].mdInput.style_mdi_num_range ="display:none;"
+                         }else{
+                            
+                            that._data[i].mdInput.style_mdi_num_input =  that._data[i].mdInput.style_mdi_number_inputting
+                            that._data[i].mdInput.mdi_num_input = e.detail.value.length
+                            that._data[i].mdInput.mdi_helper_text = that._data[i].mdInput.mdi_helper_text_tip
+                            if(!that._data[i].mdInput.isHelperShowBefore&that._data[i].mdInput.showHelperText){
+                                that._data[i].mdInput.showHelperText = false
+                            }else{
+                                that._data[i].mdInput.style_mdi_helper = that._data[i].mdInput.style_mdi_helper_shown
+                            }
+                       
+                    }
+                        page.setData({
+                            inputs:that._data
+                        })
+                 }
+                       
+                }
+
+                console.log(page.data)
+            }
+
+            page[onBlur]=function(e){
+                that._data[i].mdInput.style_mdi_border = 'border-bottom:1px solid grey;'
+                page.setData({
+                            inputs:that._data
+                })
+                _inputValues[i] = e.detail.value
                 
-             }
-         
-        })
-      }
+            }
         
     }
+
+     this.inputValues= _inputValues
+     console.log(this.inputValues)
     }
+
+
+    static getValue(){
+        return  this.inputValues
+    }
+
+   
     
 }
 

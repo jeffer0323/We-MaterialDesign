@@ -1,16 +1,16 @@
 <template name="mdInput">
-<view class="mdi-main" style="{{mdInput.style_mdi_main}}">
-    <view class="mdi-header" style="{{mdInput.style_mdi_border}}">
-        <view class="mdi-float-label" style="{{mdInput.style_mdi_float}}" >{{mdInput.mdi_float_label}}</view>
-       <input class= "mdi-input"  placeholder-class="mdi-input-ph"  bindinput="onMDInput" bindblur="onMDIBlur"/>
+<view class="mdi-main" style="{{style_mdi_main}}">
+    <view class="mdi-header" style="{{style_mdi_border}}">
+        <view class="mdi-float-label" style="{{style_mdi_float}}" >{{mdi_float_label}}</view>
+       <input class= "mdi-input"  placeholder-class="mdi-input-ph"  bindinput="{{onMDInput}}" bindblur="{{onMDIBlur}}"/>
     </view>
-    <view class="mdi-footer" >
-        <view class="mdi-helper" style="{{mdInput.style_mdi_helper}}" wx:if="{{showHelperText}}">
-            {{mdInput.mdi_helper_text}}
+    <view class="mdi-footer">
+        <view class="mdi-helper" style="{{style_mdi_helper}}" wx:if="{{showHelperText}}">
+            {{mdi_helper_text}}
         </view>
         <view class="mdi-number">
-            <span style="{{mdInput.style_mdi_num_input}}" >{{mdInput.mdi_num_input}}</span>
-            <span style="{{mdInput.style_mdi_num_range}}">/{{mdInput.mdi_num_range}}</span>    
+            <span style="{{style_mdi_num_input}}" >{{mdi_num_input}}</span>
+            <span style="{{style_mdi_num_range}}">/{{mdi_num_range}}</span>    
         </view>
     </view>
 </view>
