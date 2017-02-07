@@ -1,7 +1,8 @@
 # We-MaterialDesign
 ###1、微信小程序之MaterialDesign-- input组件（已封装成模板）
-  ####效果
-  ######1.Simple Float Label 
+  ###效果
+  1.Simple Float Label  
+  
   ![](http://p1.bpimg.com/4851/5613c97d8ae9527a.gif)
 ###2、微信小程序之MaterialDesign-- ripple&reveal效果（未封装）
 ripple： 水涟漪效果       reveal： 揭露效果
