@@ -25,7 +25,8 @@
 
  ![](http://p1.bpimg.com/4851/77c372f568c1cfbf.gif) 
  
- ####使用： 
+####使用：  
+
   	1. 复制utils下mdinput文件夹到自己的项目指定目录下 
 	
 	2. 在需要使用mdinput的页面的.wxml文件中导入mdinput模板，并在页面的js文件中引入mdinput.js  
@@ -139,20 +140,22 @@ isHelperShowBefore:true,   //   是否显示帮助信息和错误信息
 
 onMDInput:'onColumn2MDInput',   // input 组件输入时事件 
 
-onMDIBlur:'onColumn2MDIBlur'     //  input 组件失去焦点时事件 
+onMDIBlur:'onColumn2MDIBlur'     //  input 组件失去焦点时事件  
+ 
+ 
+ 
+上面定义了4个mdinput模板 
 
+inputs： 即为页面中所有mdinput模板所需要的初始数据  
 
+inputs[i].mdInput : 为每个模板所需要的数据 
 
-
-上面定义了4个mdinput模板
-inputs： 即为页面中所有mdinput模板所需要的初始数据 
-inputs[i].mdInput : 为每个模板所需要的数据
 配置完以上数据，即可调用mdinput.js中的函数，如下：
  
- onLoad:function(options){
-    // 生命周期函数--监听页面加载
-       MDInput.putData(this.data.inputs)
-  },
+  	onLoad:function(options){
+    		// 生命周期函数--监听页面加载
+       		MDInput.putData(this.data.inputs)
+   	},
  
  在页面的onLoad函数中调用MDInput.putData(this.data.inputs)方法即可将数据传递给mdinput模板。
  
