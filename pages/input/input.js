@@ -1,128 +1,144 @@
 //index.js
 //获取应用实例
-var app = getApp()
-let SnackBar = require("../../utils/snackbar/snackbar.js")
+
+
+let app = getApp()
+let MDInput = require("../../utils/mdinput/mdinput.js")
 Page({
-  data: {
-    v_username_border:'', //用户输入框底部border样式
-    v_pwd_border:'',  // 密码输入框底部border样式
-    v_float_username:'', // 浮动文字字transform 样式
-    v_float_pwd:'',
-    num_current_un:0,  // 当前输入的文本位数
-    sp_num_current_un:'', // 当前输入文本位数超过限制时的样式
-    isPwdError:false  // 提交时 密码输入错误时的文本提示
+  data:{
+    mdinput:null,
+    inputValue:[],
+    inputs:[
+      {
+      mdInput:{
+        mdi_num_range:'20',
+        mdi_float_label:'Simple Float Label', 
+        style_mdi_border_focus:'border-bottom:1px solid blue;',
+        style_mdi_float_up:'color:blue;',
+        hideFooter:'true',
+        onMDInput:'onColumn0MDInput',
+        onMDIBlur:'onColumn0MDIBlur'
+      }
+       
+    }
+      ,
+       {
+      mdInput:{
+        mdi_num_input:0,
+        mdi_num_range:'8',
+        mdi_float_label:'Simple Max Charactors', 
+        style_mdi_border_focus:'border-bottom:1px solid green;',
+        style_mdi_float_up:'color:green;',
+        style_mdi_number_inputting:'color:green;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_number_range:'color:green;',
+        hideHelper:'true',
+        onMDInput:'onColumn1MDInput',
+        onMDIBlur:'onColumn1MDIBlur'
+      }
+       
+    }
+    ,{
+        mdInput:{
+        mdi_float_label:'Range of Charactors And Error Information', 
+        mdi_helper_text_tip:'',
+        mdi_helper_text_error:'message of error',
+        mdi_num_input:0,
+        mdi_num_range:'6-16',
+        style_mdi_border_focus:'border-bottom:1px solid deepskyblue;',
+        style_mdi_float_up:'color:deepskyblue;',
+        style_mdi_number_inputting:'color:deepskyblue;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_helper_shown:'color:red;',
+        style_mdi_number_range:'color:deepskyblue;',
+        isHelperShowBefore:false,
+        onMDInput:'onColumn3MDInput',
+        onMDIBlur:'onColumn3MDIBlur'
+
+      }
+    }
+
+    ,
+    {
+      mdInput:{
+        mdi_float_label:'Keep the tip of input', 
+        mdi_helper_text_error:'always show tips',
+        mdi_helper_text_tip:'always show tips',
+        mdi_num_input:0,
+        mdi_num_range:'12',
+        style_mdi_border_focus:'border-bottom:1px solid plum;',
+        style_mdi_float_up:'color:plum;',
+        style_mdi_number_inputting:'color:plum;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_helper_shown:'color:grey;',
+        style_mdi_helper_error:'color:grey;',
+        style_mdi_number_range:'color:plum;',
+        isHelperShowBefore:true,
+        onMDInput:'onColumn4MDInput',
+        onMDIBlur:'onColumn4MDIBlur'
+      }
+       
+    }
+      ,
+      {
+      mdInput:{
+        mdi_float_label:'Input Tips And Error Information', 
+        mdi_helper_text_error:'message of  error',
+        mdi_helper_text_tip:'message of  tips',
+        mdi_num_input:0,
+        mdi_num_range:'10',
+        style_mdi_border_focus:'border-bottom:1px solid hotpink;',
+        style_mdi_float_up:'color:hotpink;',
+        style_mdi_number_inputting:'color:hotpink;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_helper_shown:'color:grey;',
+        style_mdi_helper_error:'color:red;',
+        style_mdi_number_range:'color:hotpink;',
+        isHelperShowBefore:true,
+        onMDInput:'onColumn2MDInput',
+        onMDIBlur:'onColumn2MDIBlur'
+      }
+       
+    }
+    
+       
+   
+   
+    ]
+
+     
   },
-  
-  onLoad: function (options) {
-    console.log(options)
+
+
+
+  onLoad:function(options){
+    // 生命周期函数--监听页面加载
     wx.setNavigationBarTitle({
       title: options.title,
       success: function(res) {
         // success
       }
     })
+       MDInput.putData(this.data.inputs)
+     console.log(this.data)
+
   },
-  // 用户名输入框获取焦点时事件回调
-  usernameFocus:function(e){
-    var that = this;
-    console.log(e.detail)
-  },
-  // 用户名输入框输入时事件回调
-  usernameInput:function(e){
-    console.log(e.detail)
-     this.setData({
-      v_username_border:'border-bottom:1px solid red',
-     num_current_un:e.detail.value.length
+  
+  onClickTest:function(e){
+    let inputValue = MDInput.getValue()
+      this.setData({
+       inputValue:inputValue
     })
-    if(e.detail.value.length!=0){
-       this.setData({
-        v_float_username:'color:red ;transform: translateY(-18.5px)',
-        
-        sp_num_current_un:'color:lightseagreen;'
-      })
-      if(e.detail.value.length>20){
-        
-        this.setData({
-          sp_num_current_un:'color:orangered;'
-        })
-        SnackBar.getInstance().make({
-            snack_title:"username is allowed only 20 words",
-            snack_action: 'I see!',
-            onActionClick: "onActionClick",
-            duration:2000,
-            style_snack_action:'display:block;',
-            style_snackbar:'background-color:darkgrey;'
-        })
-      }
       
-    }else{
-      this.setData({
-        v_float_username:'transform: translateY(0px)',
-      })
-    }
-  },
-  // // 用户名输入框失去焦点时回调
-  usernameBlur:function(e){
-    console.log("onBlur")
-     this.setData({
-      v_username_border:'border-bottom:1px solid grey'
-    })
-  },
-
-  onActionClick:function(e){
-    SnackBar.getInstance().hide()
-    setTimeout(()=>{
-      this.test("test")
-    },2000)
     
-  },
-
-
-  test:function(data){
-    console.log(data)
-  },
-
-  pwdFocus:function(e){
-    
-    console.log('onFocus')
-
-  },
-
-  pwdInput:function(e){
-    this.setData({
-      v_pwd_border:'border-bottom:1px solid red',
-      isPwdError:false
-    })
-    console.log(e.detail)
-    if(e.detail.value.length!=0){
-      this.setData({
-        v_float_pwd:'color:red ; transform: translateY(-18.5px)',
-      })
-    }else{
-      this.setData({
-        v_float_pwd:'transform: translateY(0px)',
-        
-      })
-    }
-  },
-
-   pwdBlur:function(e){
-    console.log("onBlur")
-     this.setData({
-      v_pwd_border:'border-bottom:1px solid grey; '
-     
-    })
-  },
-
-
-// 登录按钮模拟表单提交  可用form组件代替
-  onLogin:function(e){
-
-    this.setData({
-      isPwdError:true
-    })
-    console.log(e)
-
-
   }
+
+ 
+  
+
+ 
+  
+
+
+
 })

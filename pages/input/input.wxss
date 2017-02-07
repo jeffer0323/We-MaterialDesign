@@ -1,74 +1,9 @@
 /**index.wxss**/
 
 
-.v-main{
-  display: flex;
-  position: relative;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 200px;
-  height: 300px;
-  margin-top: 100rpx;
-  padding: 0rpx 80rpx;
-  box-shadow: 3px 3px 20px  lightgrey;
-  border-radius: 4px;
+page{
+    display: flex;
+    justify-content: center;
+    padding-top: 60rpx;
+    
 }
-
-.v-username{
-  width: 100%;
-  height: 80rpx;
-  position: relative;
-  border-bottom: 2rpx solid grey;
-
-  -webkit-transition:ease all;
-  -moz-transition:ease all;
-  transition:ease all;
-  -webkit-transition-duration:600ms;
-  -moz-transition-duration:600ms;
-  transition-duration:600ms;
-}
-
-.v-float-username{
-  font-size: 28rpx;
-  color: darkgray;
-  margin-top: 36rpx;
-  
-  -webkit-transition:ease all;
-  -moz-transition:ease all;
-  transition:ease all;
-  -webkit-transition-duration:600ms;
-  -moz-transition-duration:600ms;
-  transition-duration:600ms;
-}
-
-
-
-.it-username{
-  width: 100%;
-  height: 40rpx;
-  font-size: 30rpx;
-  position: absolute;
-  bottom: 0;
-}
-
-.v-username-max{
-  
-  margin-bottom: 40rpx;
-  font-size: 20rpx;
-  align-self: flex-end;
-  color:lightseagreen;
-}
-
-.v-login{
-  font-size:16px;
-  width: 80px;
-  height: 40px;
-  line-height: 40px;
-  position:absolute; 
-  bottom:20px;
-  box-shadow: 3px 3px 10px darkgray;
-  text-align: center;
-}
-
-
-

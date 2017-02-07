@@ -1,31 +1,19 @@
-<import src="../../utils/snackbar/snackbar.wxml"/>
-  <view class="container">
-  
-  <view class="v-main">
-    <view style="margin-bottom:80rpx; margin-top:40rpx; border-bottom:1px solid skyblue;font-family:Times New Roman,Georgia,Serif;">Login</view>
-    <view class="v-username" style="{{v_username_border}}">
-        <view class="v-float-username" style="{{v_float_username}}" >username</view>
-       <input class= "it-username"  placeholder-class="it-username-ph" bindfocus="usernameFocus" bindinput="usernameInput" bindblur="usernameBlur"/>
-    </view>
-    <view class="v-username-max" >
-      <span style="{{sp_num_current_un}}" >{{num_current_un}}</span>
-      <span style="color:grey;">/20</span>
-    </view>
+ <import src="../../utils/mdinput/mdinput.wxml"/>
+ <view style="height:100%;width:100%;display: flex;flex-flow:column nowrap; align-items:center;">
+ 
+
+<block wx:for="{{inputs}}">
+    <template is="mdInput" data="{{...item.mdInput}}"/>
+</block>
+
+
+ <view style="margin-top:60rpx;" bindtap="onClickTest">Click me to get value</view>
+ <view>{{inputValue}}</view>
+ </view>
+ 
+
+
+
+
     
-
-
-    <view class="v-username" style="{{v_pwd_border}}" animation="{{animationData}}">
-        <view class="v-float-username" style="{{v_float_pwd}}">password</view>
-       <input class= "it-username" password="true" placeholder-class="it-username-ph" bindfocus="pwdFocus" bindinput="pwdInput" bindblur="pwdBlur"/>
-    </view>
-    <view wx:if="{{isPwdError}}" style="color:orangered; font-size:11px; font-family:Times New Roman,Georgia,Serif;align-self:flex-start;">The password is incorrect!</view>
-   
-   <button size="default" type="primary" class="v-login"  style="{{loginStyle}}" bindtap="onLogin" hover-start-time="50">Login</button>
-  </view>
-  <view class="v-logo-text">
-    —  Material Design  —
-  </view>
-</view>
-
-<template is="snackbar" data="{{...snackbar}}"/>
 
