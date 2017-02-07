@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import "utils/snackbar/snackbar.wxss";
-@import "utils/mdInput/mdinput.wxss";
+@import "utils/mdinput/mdinput.wxss";
 page{
   height: 100%;
   font-family:Times New Roman,Georgia,Serif;
