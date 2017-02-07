@@ -23,7 +23,123 @@
  
 #####6.Get the value 
 
- ![](http://p1.bpimg.com/4851/77c372f568c1cfbf.gif)
+ ![](http://p1.bpimg.com/4851/77c372f568c1cfbf.gif) 
+ 
+ ####使用： 
+  	1. 复制utils下mdinput文件夹到自己的项目指定目录下
+	2. 在需要使用mdinput的页面的.wxml文件中导入mdinput模板，并在页面的js文件中引入mdinput.js 
+	3. 在app.wxss全局样式中导入的mdinput样式
+ 	  在当前页面的page.data中配置mdinput组件样式以及初始数据，数据是以数组的形式存在，有多少个mdinput模板，数组的长度即是该值。 
+	  如： 
+
+data:{
+   
+    inputs:[
+      {
+      mdInput:{
+        mdi_num_range:'20',
+        mdi_float_label:'Simple Float Label', 
+        style_mdi_border_focus:'border-bottom:1px solid blue;',
+        style_mdi_float_up:'color:blue;',
+        hideFooter:'true',
+        onMDInput:'onColumn0MDInput',
+        onMDIBlur:'onColumn0MDIBlur'
+      }
+       
+    }
+      ,
+       {
+      mdInput:{
+        mdi_num_input:0,
+        mdi_num_range:'8',
+        mdi_float_label:'Simple Max Charactors', 
+        style_mdi_border_focus:'border-bottom:1px solid green;',
+        style_mdi_float_up:'color:green;',
+        style_mdi_number_inputting:'color:green;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_number_range:'color:green;',
+        hideHelper:'true',
+        onMDInput:'onColumn1MDInput',
+        onMDIBlur:'onColumn1MDIBlur'
+      }
+       
+    }
+    ,{
+        mdInput:{
+        mdi_float_label:'Range of Charactors And Error Information', 
+        mdi_helper_text_tip:'',
+        mdi_helper_text_error:'message of error',
+        mdi_num_input:0,
+        mdi_num_range:'6-16',
+        style_mdi_border_focus:'border-bottom:1px solid deepskyblue;',
+        style_mdi_float_up:'color:deepskyblue;',
+        style_mdi_number_inputting:'color:deepskyblue;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_helper_shown:'color:red;',
+        style_mdi_number_range:'color:deepskyblue;',
+        isHelperShowBefore:false,
+        onMDInput:'onColumn3MDInput',
+        onMDIBlur:'onColumn3MDIBlur'
+
+      }
+    }
+
+    ,
+    {
+      mdInput:{
+        mdi_float_label:'Keep the tip of input', 
+        mdi_helper_text_error:'always show tips',
+        mdi_helper_text_tip:'always show tips',
+        mdi_num_input:0,
+        mdi_num_range:'12',
+        style_mdi_border_focus:'border-bottom:1px solid plum;',
+        style_mdi_float_up:'color:plum;',
+        style_mdi_number_inputting:'color:plum;',
+        style_mdi_number_overflow:'color:red;',
+        style_mdi_helper_shown:'color:grey;',
+        style_mdi_helper_error:'color:grey;',
+        style_mdi_number_range:'color:plum;',
+        isHelperShowBefore:true,
+        onMDInput:'onColumn4MDInput',
+        onMDIBlur:'onColumn4MDIBlur'
+      }
+       
+    }
+      ,
+      {
+      mdInput:{
+        mdi_float_label:'Input Tips And Error Information',  // 浮动文字
+        mdi_helper_text_error:'message of  error',  // 输入错误时消息
+        mdi_helper_text_tip:'message of  tips',  //  输入时的帮助消息
+        mdi_num_input:0,   //  初始化输入位数
+        mdi_num_range:'10',   //  最大输入位数
+        style_mdi_border_focus:'border-bottom:1px solid hotpink;',  //  mdinput 模板输入时下划线样式
+        style_mdi_float_up:'color:hotpink;',   //  文字浮动时的颜色  不浮动时grey
+        style_mdi_number_inputting:'color:hotpink;',  // 输入时位数颜色
+        style_mdi_number_overflow:'color:red;',   // 输入时位数超过限制时颜色
+        style_mdi_helper_shown:'color:grey;',     //  输入时的帮助消息颜色
+        style_mdi_helper_error:'color:red;',    //  输入错误时消息颜色
+        style_mdi_number_range:'color:hotpink;',     //  最大位数字体颜色
+        isHelperShowBefore:true,   //   是否显示帮助信息和错误信息
+        onMDInput:'onColumn2MDInput',   // input 组件输入时事件
+        onMDIBlur:'onColumn2MDIBlur'     //  input 组件失去焦点时事件
+      }
+       
+     }
+}
+上面定义了5个mdinput模板
+inputs： 即为页面中所有mdinput模板所需要的初始数据 
+inputs[i].mdInput : 为每个模板所需要的数据
+配置完以上数据，即可调用mdinput.js中的函数，如下：
+ 
+ onLoad:function(options){
+    // 生命周期函数--监听页面加载
+       MDInput.putData(this.data.inputs)
+  },
+ 
+ 在页面的onLoad函数中调用MDInput.putData(this.data.inputs)方法即可将数据传递给mdinput模板。
+ 
+ 具体demo可见 pages/input文件夹下
  
 ###2、微信小程序之MaterialDesign-- ripple&reveal效果（未封装）
 ripple： 水涟漪效果       reveal： 揭露效果
@@ -40,7 +156,7 @@ reveal：是ripple的变形，减慢动画执行时间，同时保持两层view�
 ![](http://i1.piimg.com/4851/b1a3ccce5780a8b5.gif)
 ####  使用：
   	1. 复制utils下snackbar文件夹到自己的项目指定目录下
-	2. 在需要使用snackbar的页面的.wxml文件中导入snackbar模板
+	2. 在需要使用snackbar的页面的.wxml文件中导入snackbar模板，并在页面的js文件中引入mdinput.js 
 	3. 在app.wxss全局样式中导入的snackbar样式
 	配置完以上三步，即可开始调用snackbar，具体如下：
 	SnackBar.getInstance().make({
