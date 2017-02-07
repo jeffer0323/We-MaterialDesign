@@ -4,6 +4,27 @@
 #####1.Simple Float Label  
   
   ![](http://p1.bpimg.com/4851/5613c97d8ae9527a.gif)
+
+#####2.Simple Max Charactors 
+ 
+ ![](http://p1.bpimg.com/4851/ebd702e25f00658f.gif)
+ 
+#####3.Range of Charactors And Error Information 
+ 
+ ![](http://p1.bpimg.com/4851/59b92546b172d315.gif)
+ 
+#####4.Keep the tip of input
+ 
+ ![](http://p1.bpimg.com/4851/d7e89c9286fdecec.gif)
+ 
+#####5.Input Tips And Error Information
+ 
+ ![](http://p1.bpimg.com/4851/20b37c6cdc746aa4.gif)
+ 
+#####6.Get the value 
+
+ ![](http://p1.bpimg.com/4851/77c372f568c1cfbf.gif)
+ 
 ###2、微信小程序之MaterialDesign-- ripple&reveal效果（未封装）
 ripple： 水涟漪效果       reveal： 揭露效果
 ripple： 主要是两个view的叠加，设置最上层view的border-radius为100%，背景设置半透明。最下层view设置点击事件，并记录点击时的绝对坐标与相对坐标，坐标运算之后，同时动态改变最上层view的top与left，即可实现手指点击哪里，最上层view就会出现在那里。 最后实现涟漪，通过对上层view进行放大动画即可。
