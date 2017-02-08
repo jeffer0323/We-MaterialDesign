@@ -1,4 +1,4 @@
-<import src="../../utils/snackbar/snackbar.wxml"/>
+<import src="../../library/snackbar/snackbar.wxml"/>
 <view class="v-item" bindtap="onClick1" hover="true" hover-class="hover-item">
     Text Message
 </view >

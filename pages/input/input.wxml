@@ -1,4 +1,4 @@
- <import src="../../utils/mdinput/mdinput.wxml"/>
+ <import src="../../library/mdinput/mdinput.wxml"/>
  <view style="height:100%;width:100%;display: flex;flex-flow:column nowrap; align-items:center;">
  
 

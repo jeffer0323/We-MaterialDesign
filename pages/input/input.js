@@ -3,11 +3,10 @@
 
 
 let app = getApp()
-let MDInput = require("../../utils/mdinput/mdinput.js")
+let MDInput = require("../../library/mdinput/mdinput.js")
 Page({
   data:{
-    mdinput:null,
-    inputValue:[],
+   
     inputs:[
       {
       mdInput:{
@@ -104,7 +103,8 @@ Page({
        
    
    
-    ]
+    ],
+     inputValue:[]
 
      
   },

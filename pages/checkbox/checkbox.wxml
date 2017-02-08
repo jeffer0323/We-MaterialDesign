@@ -1,0 +1,21 @@
+<!--pages/checkbox/checkbox.wxml-->
+<view style=" height:200px; display:flex; align-items:center; justify-content:center;">
+    <view class="mdcb_b"  style="{{style_cbb}}" bindtap="onClickCB" >
+        
+         ✔
+        <view class="mdcb_t" style="{{style_cbt}}">  
+        
+        </view>
+        
+    </view>
+</view>
+
+<view class="v-item" bindtap="onClick1" hover="true" hover-class="hover-item">
+    setChecked(true)
+</view>
+
+
+<view class="v-item" bindtap="onClick2" hover="true" hover-class="hover-item">
+    setChecked(false)
+</view>
+

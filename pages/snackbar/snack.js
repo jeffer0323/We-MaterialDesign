@@ -1,5 +1,5 @@
 let app = getApp()
-let SnackBar = require("../../utils/snackbar/snackbar.js")
+let SnackBar = require("../../library/snackbar/snackbar.js")
 Page({
   data:{
   },
