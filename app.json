@@ -4,6 +4,7 @@
     "pages/input/input",
     "pages/ripple/ripple",
     "pages/snackbar/snack",
+    "pages/checkbox/checkbox",
     "pages/me/me"
   ],
   "window":{
