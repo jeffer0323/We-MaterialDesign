@@ -252,8 +252,9 @@ reveal：是ripple的变形，减慢动画执行时间，同时保持两层view�
 sample： 可详细参见pages/snackbar目录下demo  
 
 ###4、微信小程序之MaterialDesign-- checkbox（未封装）
-	
  
-   ![](http://i1.piimg.com/4851/06a8d2bfc0bccfe8.gif)
+####效果图：
+ 
+   ![](http://p1.bpimg.com/4851/612fef4cd9875794.gif)    ![](http://p1.bpimg.com/4851/02f772302af60fe9.gif)
 
 demo: 详见pages/checkbox文件夹
