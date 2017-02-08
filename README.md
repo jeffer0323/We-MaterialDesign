@@ -254,6 +254,6 @@ sample： 可详细参见pages/snackbar目录下demo  
 ###4、微信小程序之MaterialDesign-- checkbox（未封装）
 	
  
-![](http://i1.piimg.com/4851/06a8d2bfc0bccfe8.gif)
+   ![](http://i1.piimg.com/4851/06a8d2bfc0bccfe8.gif)
 
 demo: 详见pages/checkbox文件夹
