@@ -1,0 +1,43 @@
+.snack-bar-hide{
+    display: none;
+}
+
+.snack-bar{
+    position: fixed;
+    width: 100%;
+    height: 100rpx;
+    background-color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    bottom: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.snack-text{
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 40rpx;
+    font-size: 28rpx;
+}
+
+.snack-action{
+    width: 160rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-right: 40rpx;
+    text-align: center;
+    color: #0090ff;
+    padding: 0 8rpx;
+    
+}
+
+.hover-action{
+    background-color:rgba(180,180, 180, 0.4);
+    border-radius: 4rpx;
+}
