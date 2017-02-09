@@ -1,0 +1,32 @@
+/* pages/progressbar/progressbar.wxss */
+.myCanvas{
+  background-color: transparent;
+  width: 50px;
+  height:90px;
+}
+
+.v-canvas{
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius: 4rpx;
+  margin-top: 40px;
+}
+
+
+.v-item{
+    height: 80rpx;
+    width: 60%;
+    margin: 20rpx 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: deepskyblue;
+    border-radius: 8rpx;
+    color: white;
+
+}
+
+
+.hover-item{
+    background-color:rgba(0,191, 255, 0.4);
+    border-radius: 8rpx;
+}

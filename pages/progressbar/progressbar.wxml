@@ -1,0 +1,26 @@
+<!--pages/progressbar/progressbar.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <view class="v-canvas">
+    <canvas canvas-id="myCanvas" style="{{canvas_style}}" class="myCanvas"/>
+  </view>
+        <slider  bindchange="sliderChange" style="width:200px; margin-top:40px;" color="black"/>
+
+  <view class="v-item" bindtap="start" hover="true" hover-class="hover-item">
+      start
+  </view>
+
+  <view class="v-item" bindtap="pause" hover="true" hover-class="hover-item">
+      pause
+  </view>
+
+  <view class="v-item" bindtap="reset" hover="true" hover-class="hover-item">
+      reset
+  </view>
+
+  <view class="v-item" bindtap="switch_direction" hover="true" hover-class="hover-item">
+      switch direction
+  </view>
+
+</view>
+
