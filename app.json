@@ -5,6 +5,7 @@
     "pages/ripple/ripple",
     "pages/snackbar/snack",
     "pages/checkbox/checkbox",
+    "pages/progressbar/progressbar",
     "pages/me/me"
   ],
   "window":{
