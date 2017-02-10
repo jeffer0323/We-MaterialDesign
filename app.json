@@ -6,6 +6,7 @@
     "pages/snackbar/snack",
     "pages/checkbox/checkbox",
     "pages/progressbar/progressbar",
+    "pages/horizontalprogressbar/horizontalprogressbar",
     "pages/me/me"
   ],
   "window":{
