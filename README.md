@@ -258,3 +258,12 @@ sample： 可详细参见pages/snackbar目录下demo  
    ![](http://p1.bpimg.com/4851/612fef4cd9875794.gif)    ![](http://p1.bpimg.com/4851/02f772302af60fe9.gif)
 
 demo: 详见pages/checkbox文件夹
+
+
+###5、微信小程序之MaterialDesign-- progressbar（未封装） 
+ 
+####效果图： 
+ 
+   ![](http://p1.bqimg.com/4851/bb3f6c477a0cbb31.gif) 
+
+demo: 详见pages/progressbar文件夹

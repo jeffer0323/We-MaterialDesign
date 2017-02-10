@@ -7,16 +7,15 @@ var mW = 0;
     var lineWidth = 1; 
     var nowRange = 0;
     var context = null;
-    //Sin 曲线属性
     var sX = 0;
     var sY = 0;
-    var axisLength = 0; //轴长
-    var waveWidth = 0.02 ; //波浪宽度,数越小越宽 
-    var waveHeight = 10; //波浪高度,数越大越高
+    var axisLength = 0; 
+    var waveWidth = 0.02 ;
+    var waveHeight = 10; 
 
-    var speed = 0.1; //波浪速度，数越大速度越快
+    var speed = 0.1;
 
-    var xOffset = 0; //波浪x偏移量
+    var xOffset = 0; 
     var timerIsClose = true;
      var timer1 = null;
       var timer2 = null;
@@ -125,16 +124,14 @@ Page({
 
 
 
-//画sin 曲线函数
+//画曲线函数
 drawSin: function(ctx,xOffset){
     ctx.save();
 
-    var points=[]; //用于存放绘制Sin曲线的点
+    var points=[];
 
     ctx.beginPath();
-    //在整个轴长上取点
     for(var x = sX; x < sX + axisLength; x += 50 / axisLength){
-      //此处坐标(x,y)的取点，依靠公式 “振幅高*sin(x*振幅宽 + 振幅偏移量)”
 
       var y = -Math.sin((sX + x) * waveWidth+ xOffset);
       var dY = mH * (1 - nowRange / 100 )-waveHeight/2;
@@ -142,7 +139,6 @@ drawSin: function(ctx,xOffset){
       ctx.lineTo(x, dY + y * waveHeight);  
     }
 
-    //封闭路径
     ctx.lineTo(axisLength, mH);
     ctx.lineTo(sX, mH);
     ctx.lineTo(points[0][0],points[0][1]);
