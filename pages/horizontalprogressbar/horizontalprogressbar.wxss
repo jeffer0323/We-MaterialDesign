@@ -1,0 +1,16 @@
+/* pages/horizontalprogressbar/horizontalprogressbar.wxss */
+
+.myCanvas1{
+  background-color: transparent;
+  width: 200px;
+  height:100px;
+}
+
+.v-canvas{
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius: 4rpx;
+  margin-top: 40px;
+}
+
+

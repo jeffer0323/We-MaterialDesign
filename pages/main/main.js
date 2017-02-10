@@ -1,6 +1,6 @@
 Page({
   data:{
-      txs:['input','ripple、reveal','snackbar','checkbox','progressbar'],
+      txs:['input','ripple、reveal','snackbar','checkbox','progressbar','horizontalprogressbar'],
       url:''
   },
   onLoad:function(options){
@@ -29,6 +29,9 @@ Page({
         break;
         case 4:
           tempTitle = '../progressbar/progressbar'
+        break;
+        case 5:
+          tempTitle = '../horizontalprogressbar/horizontalprogressbar'
         break;
       }
       wx.navigateTo({

@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="v-canvas">
+    <canvas canvas-id="myCanvas1" style="{{canvas_style}}" class="myCanvas1"/>
+  </view>
+        
+
+</view>
