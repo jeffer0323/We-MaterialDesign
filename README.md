@@ -1,31 +1,31 @@
 # We-MaterialDesign
-###1、微信小程序之MaterialDesign-- input组件（已封装成模板）
-####效果
-#####1.Simple Float Label  
+### 1、微信小程序之MaterialDesign-- input组件（已封装成模板）
+#### 效果
+##### 1.Simple Float Label  
   
   ![](http://p1.bpimg.com/4851/5613c97d8ae9527a.gif)
 
-#####2.Simple Max Charactors 
+##### 2.Simple Max Charactors 
  
  ![](http://p1.bpimg.com/4851/ebd702e25f00658f.gif)
  
-#####3.Range of Charactors And Error Information 
+##### 3.Range of Charactors And Error Information 
  
  ![](http://p1.bpimg.com/4851/59b92546b172d315.gif)
  
-#####4.Keep the tip of input
+##### 4.Keep the tip of input
  
  ![](http://p1.bpimg.com/4851/d7e89c9286fdecec.gif)
  
-#####5.Input Tips And Error Information
+##### 5.Input Tips And Error Information
  
  ![](http://p1.bpimg.com/4851/20b37c6cdc746aa4.gif)
  
-#####6.Get the value 
+##### 6.Get the value 
 
  ![](http://p1.bpimg.com/4851/77c372f568c1cfbf.gif) 
  
-####使用：  
+#### 使用：  
 
   	1. 复制library下mdinput文件夹到自己的项目指定目录下 
 	
@@ -111,7 +111,7 @@
      }
    
    
-####属性说明：
+#### 属性说明：
 mdi_float_label:'Input Tips And Error Information',  // 浮动文字 
 
 mdi_helper_text_error:'message of  error',  // 输入错误时消息 
@@ -161,7 +161,7 @@ inputs[i].mdInput : 为每个模板所需要的数据
  
  具体demo可见 pages/input文件夹下
  
-###2、微信小程序之MaterialDesign-- ripple&reveal效果（未封装）
+### 2、微信小程序之MaterialDesign-- ripple&reveal效果（未封装）
 ripple： 水涟漪效果       reveal： 揭露效果
 ripple： 主要是两个view的叠加，设置最上层view的border-radius为100%，背景设置半透明。最下层view设置点击事件，并记录点击时的绝对坐标与相对坐标，坐标运算之后，同时动态改变最上层view的top与left，即可实现手指点击哪里，最上层view就会出现在那里。 最后实现涟漪，通过对上层view进行放大动画即可。
 reveal：是ripple的变形，减慢动画执行时间，同时保持两层view的背景色动态保持一致即可。
@@ -169,7 +169,7 @@ reveal：是ripple的变形，减慢动画执行时间，同时保持两层view�
 ![](http://p1.bpimg.com/567571/3ebc8791315b65b7.gif)
 
 
-###3、微信小程序之MaterialDesign-- SnackBar（已封装成模板）    
+### 3、微信小程序之MaterialDesign-- SnackBar（已封装成模板）    
   
   snackbar： 主要用于提醒用户或者轻量级交互，实现原理： 在需要使用snackbar的页面底部添加一个view，对view进行fixed定位且设置z-index为1000，动态show和hide即可  
 
@@ -251,18 +251,18 @@ reveal：是ripple的变形，减慢动画执行时间，同时保持两层view�
 </table>  
 sample： 可详细参见pages/snackbar目录下demo  
 
-###4、微信小程序之MaterialDesign-- checkbox（未封装）
+### 4、微信小程序之MaterialDesign-- checkbox（未封装）
  
-####效果图：
+#### 效果图：
  
    ![](http://p1.bpimg.com/4851/612fef4cd9875794.gif)    ![](http://p1.bpimg.com/4851/02f772302af60fe9.gif)
 
 demo: 详见pages/checkbox文件夹
 
 
-###5、微信小程序之MaterialDesign-- progressbar（未封装） 
+### 5、微信小程序之MaterialDesign-- progressbar（未封装） 
  
-####效果图： 
+#### 效果图： 
  
    ![](http://p1.bqimg.com/4851/bb3f6c477a0cbb31.gif) 
 
